@@ -1,0 +1,35 @@
+name:                map-class
+version:             0.1.0.0
+synopsis:            Typeclass for map-like structures
+description:         Please see README.md
+homepage:            http://github.com/snoyberg/map-class#readme
+license:             MIT
+license-file:        LICENSE
+author:              Michael Snoyman
+maintainer:          michael@fpcomplete.com
+category:            Data
+build-type:          Simple
+extra-source-files:  README.md ChangeLog.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Data.Map.Class
+  build-depends:       base >= 4.7 && < 5
+                     , containers >= 0.5
+                     , unordered-containers >= 0.2.5.1
+                     , hashable >= 1.2.4
+  default-language:    Haskell2010
+
+test-suite map-class-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , map-class
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/map-class
